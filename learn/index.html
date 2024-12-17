@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>Learn about Meshtastic and Austin Mesh</title>
-        <meta name="description" content="Learn all about Meshtastic, Austin Mesh, why we exist, and similar technologies.">
+        <title>Learn about Meshtastic and Okie Mesh</title>
+        <meta name="description" content="Learn all about Meshtastic, Okie Mesh, why we exist, and similar technologies.">
         <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1.0">
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -13,19 +13,19 @@
     </head>
     <body>
         <header>
-            <a href="/"><img src="../images/Austin-Mesh-Logo.svg" class="logo" alt="Logo for Austin Mesh" title="Austin Mesh" width="500" height="121" /></a>
+            <a href="/"><img src="../images/Okie-Mesh-Logo.svg" class="logo" alt="Logo for Okie Mesh" title="Okie Mesh" width="500" height="121" /></a>
             <button onclick="document.getElementById('event').showModal()" class="default meet-button">📅 Upcoming Meeting 12/11</button>
         </header>
         <dialog id="event">
             <header>
-                <h1>Austin Mesh Meeting</h1>
+                <h1>Okie Mesh Meeting</h1>
             </header>
-            <p>Come hang out at our next installment of the Austin Mesh meeting series. Bring your node. Bring a friend. Bring your friend's node.</p>
-            <p><b>Wed December 11th, 6:00pm</b> (<a href="https://discord.gg/MebnGdYQZg?event=1283623314123784293" target="_blank">Save the date</a>)</p>
-            <p>Black Sheep Lodge<br>2108 S Lamar Blvd, Austin, TX 78704<br><a href="https://www.openstreetmap.org/node/919327915">OpenStreetMap</a><br><a href="https://maps.app.goo.gl/oQQTGDjV5tjSadae8">Google Maps</a></p>
+            <p>Come hang out at our next installment of the Okie Mesh meeting series. Bring your node. Bring a friend. Bring your friend's node.</p>
+            <p><b>TBD, 6:00pm</b> (<a href="https://discord.gg/meshtastic-867578229534359593" target="_blank">Save the date</a>)</p>
+            <p>Wilshire Gun<br>615 W Wilshire Blvd, Oklahoma City, OK 73116<br><a href="https://www.openstreetmap.org/way/292772903#map=18/35.550753/-97.523451">OpenStreetMap</a><br><a href="https://maps.app.goo.gl/oQQTGDjV5tjSadae8">Google Maps</a></p>
             <footer>
                 <form method="dialog">
-                    <a class="default" href="https://discord.gg/MebnGdYQZg?event=1283623314123784293" type="button">Save the date</a>
+                    <a class="default" href="https://discord.gg/meshtastic-867578229534359593" type="button">Save the date</a>
                     <button type="submit">Close</button>
                 </form>
             </footer>
@@ -78,11 +78,11 @@
                 </menu>
             </nav>
             <hgroup>
-                <h1>Learn about Austin Mesh and Meshtastic</h1>
-                <p>Austin Mesh is a community group working to build a mesh network of solar-powered <a href="https://meshtastic.org/">meshtastic</a> radios in Austin. This network acts like a city-wide text messaging system, allowing people to communicate publicly or privately with anyone on the network. All of this happens without any external infrastructure - no power, no cell phone towers, no internet.</p>
+                <h1>Learn about Okie Mesh and Meshtastic</h1>
+                <p>Oklahoma Mesh is a community group working to build a mesh network of solar-powered <a href="https://meshtastic.org/">meshtastic</a> radios in Oklahoma City. This network acts like a city-wide text messaging system, allowing people to communicate publicly or privately with anyone on the network. All of this happens without any external infrastructure - no power, no cell phone towers, no internet.</p>
             </hgroup>
             <ul>
-                <li><a href="#about">About Austin Mesh and Meshtastic</a>
+                <li><a href="#about">About Okie Mesh and Meshtastic</a>
                     <ul>
                         <li>How does it work?</li>
                         <li><a href="#eli5">Explain it like I'm 5</a></li>
@@ -90,17 +90,17 @@
                         <li>Why build this network?</li>
                     </ul>
                 </li>
-                <li><a href="#coverage">Network coverage in Austin</a></li>
+                <li><a href="#coverage">Network coverage in Oklahoma</a></li>
                 <li><a href="#comparisons">Comparisons to similar technology</a></li>
             </ul>
             <section id="about">
-                <h2>All about Austin Mesh and Meshtastic</h2>
+                <h2>All about Okie Mesh and Meshtastic</h2>
                 <h3>How does it work?</h3>
-                <p>We have set up a number of solar-powered radio repeaters in Austin. These radios communicate on the <a href="https://en.wikipedia.org/wiki/33-centimeter_band">906.875 MHZ</a> frequency using the <a href="https://en.wikipedia.org/wiki/LoRa">LoRa protocol</a>. The radios mesh using the open-source <a href="https://meshtastic.org/">Meshtastic</a> software. Users can connect to these repeaters by Bluetooth if they’re close enough or they can use their own handheld nodes which will also act as repeaters. The messages hop from node to node, extending the reach of the network and ensuring everyone receives every message.</p>
+                <p>We have set up a number of solar-powered radio repeaters in Oklahoma. These radios communicate on the <a href="https://en.wikipedia.org/wiki/33-centimeter_band">906.875 MHZ</a> frequency using the <a href="https://en.wikipedia.org/wiki/LoRa">LoRa protocol</a>. The radios mesh using the open-source <a href="https://meshtastic.org/">Meshtastic</a> software. Users can connect to these repeaters by Bluetooth if they’re close enough or they can use their own handheld nodes which will also act as repeaters. The messages hop from node to node, extending the reach of the network and ensuring everyone receives every message.</p>
                 <h3 id="eli5">Can you explain it like I'm 5?</h3>
                 <p>Pretend you're sitting in class and want to send a note to everyone in the class. You write your note on a piece of paper and copy it three times. The message can be up to 228 characters - about as long as this paragraph so far. You hand those three pieces of paper to the three people around you. Then those three people re-write the message three times and hand it to the three people around them and so on. Now imagine a big gust of wind comes and blows away some of the messages. If even just a few people saw the note and keep copying and re-sending it, eventually everyone will get a copy of the note. This is like sending an unencrypted message to everyone on the network.</p>
                 <p>Now imagine you want to send a message to a single person or a select group of people but you don't want other people who see the note to be able to read it. You could write the note using a secret language. You could then hand a decoder key to your friend or to a group of friends and they could decode the message. The message still gets passed the same way - with every single person writing the message a few times and handing it to everyone - but only those people with the decoder key will be able to understand the message. This is like sending an encrypted direct message or encrypted group message.</p>
-                <p>Austin Mesh works the same way as this paper example, but instead of sending paper notes we're using digital text messages and sending it with radio waves. Our radios are solar powered and they don’t need any internet or cell phone coverage. This means they will work even if the power is out.</p>
+                <p>Okie Mesh works the same way as this paper example, but instead of sending paper notes we're using digital text messages and sending it with radio waves. Our radios are solar powered and they don’t need any internet or cell phone coverage. This means they will work even if the power is out.</p>
                 <h3>What can it do?</h3>
                 <p>Meshtastic is a bit like a decentralized social media platform or SMS text messaging. It has a number of different features which will be familiar to anyone who has sent a text message or posted on social media.</p>
                 <dl>
@@ -123,11 +123,11 @@
                 <h4>2) Disasters</h4>
                 <p>If the power goes out, like during the 2021 Winter Storm Uri, this network should allow people to continue to communicate with each other without electricity, cell phone coverage, or internet. This big city-wide group text chain could allow people to ask for help or offer assistance. People could get information about where warming centers are open or ask who in their neighborhood still has power. People could also send encrypted direct messages to check in on friends and family or they could send encrypted group messages to coordinate privately in a group.</p>
                 <h4>3) Decentralized, Open, and Resilient</h4>
-                <p>Austin Mesh is decentralized - there is no central server or corporation - all the communication bounces through the entire mesh. Austin Mesh is open to everyone - you don't have to ask permission to join and all of the software is open-source. Austin Mesh is resilient - our solar-powered radios don't need cell phone towers, internet access, or electricity. We hope this project will inspire others to build things that are decentralized, open, and resilient.</p>
+                <p>Okie Mesh is decentralized - there is no central server or corporation - all the communication bounces through the entire mesh. Okie Mesh is open to everyone - you don't have to ask permission to join and all of the software is open-source. Okie Mesh is resilient - our solar-powered radios don't need cell phone towers, internet access, or electricity. We hope this project will inspire others to build things that are decentralized, open, and resilient.</p>
             </section>
             <section id="coverage">
-                <h2>What kind of coverage does the Austin Mesh network have?</h2>
-                <p>As of Summer 2024 we have coverage throughout most of downtown, central, and East Austin. We have intermittent coverage in South, Southwest (all the way to Dripping Springs), North, and even all the way up to Leander. We're actively working to expand this coverage.</p>
+                <h2>What kind of coverage does the Okie Mesh network have?</h2>
+                <p>As of Summer 2024 we have coverage throughout most of downtown, central, and East Oklahoma. We have intermittent coverage in South, Southwest (all the way to Newcastle), North, and even all the way up to Chickasha. We're actively working to expand this coverage.</p>
                 <p>We now have a coverage map showing nodes seen over the last year:</p>
                 <iframe src="https://graphs.austinmesh.org/d-solo/ddpwwgtdxf2m8f/austin-mesh?orgId=1&from=now-1y&to=now&panelId=10" height="400" frameborder="0"></iframe>
                 <p><a href="https://meshmap.net/">The MQTT map at meshmap.net</a> is <b>not</b> representative of the coverage as we <a href="/join/#best-practices">do not recommend using MQTT</a> however it may still be useful for you to see what is in your area. Another <a href="https://canvis.app/meshtastic-map">map of <b>self reported</b> nodes</a> is also available, but more likely to be out-of-date.</p>
