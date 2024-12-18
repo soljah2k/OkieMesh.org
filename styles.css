@@ -62,7 +62,7 @@ main {
 }
 footer {
     margin: 0 auto !important;
-    max-width: 900px;
+    max-width: 500px;
 }
 .partner-logos {
     display: flex;
