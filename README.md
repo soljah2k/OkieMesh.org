@@ -66,7 +66,7 @@ We welcome contributions of all kinds! Here are some ways to get involved:
 We are grateful for the support of our incredible community partners who make this network possible. They share our vision of keeping Oklahoma unique and connected.
 
 ## License
-This project is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License [Creativesommons.org](https://creativecommons.org/licenses/by-sa/4.0/legalcode.en).
+This project is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License [CreativeCommons.org](https://creativecommons.org/licenses/by-sa/4.0/legalcode.en).
 
 ## Contact
 Have questions or ideas? Feel free to reach out to us via email or connect with the community on [OkieMesh.org](https://www.okiemesh.org)!
