@@ -17,7 +17,7 @@
     --bg-default: #2C2D3C;
     --color-canvasDark: #1f2031;
     --color-canvasDarker: #232430;
-    --color-canvasText: #fff;
+    --color-canvasText: #E0E0E0;
   }
 }
 body > header {
@@ -73,7 +73,7 @@ footer {
     align-items: center;
     display: flex;
     margin-top: 2rem;
-}
+
 .partner-heading img {
     margin-left: 0;
     margin-right: 10px;
@@ -102,4 +102,5 @@ footer {
 menu > li:has(> menu)::after {
     content: "▾";
     display: inline-block;
+}
 }
