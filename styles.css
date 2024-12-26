@@ -114,6 +114,6 @@ menu > li:has(> menu)::after {
     background-size: cover;
     background-attachment: fixed; /* Enables parallax effect */
     background-position: center;
-    opacity: 0.1; /* Adjust for transparency */
+    opacity: 0.2; /* Adjust for transparency */
     z-index: -1; /* Places the background behind content */
 }
