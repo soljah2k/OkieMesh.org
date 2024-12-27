@@ -153,12 +153,12 @@
     <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            var map = L.map('map').setView([30.2672, -97.7431], 10);
+            var map = L.map('map').setView([35.4676, -97.5164], 7);
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '© OpenStreetMap contributors'
             }).addTo(map);
 
-            fetch('austin-mesh-rangetests.csv')
+            fetch('okiemesh-rangetests.csv')
                 .then(response => response.text())
                 .then(csv => {
                     var heatmapData = [];
@@ -167,9 +167,9 @@
                         if (i != 0) {
                             var columns = line.split(',');
                             if (columns.length >= 1) {
-                                var lat = parseFloat(columns[0]);
-                                var lng = parseFloat(columns[1]);
-                                var intensity = parseFloat(columns[2]);
+                                var lat = parseFloat(columns[1]);
+                                var lng = parseFloat(columns[2]);
+                                var intensity = parseFloat(columns[3]);
                                 heatmapData.push([lat, lng, intensity]);
                             }
                         }
