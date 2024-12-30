@@ -103,6 +103,9 @@ menu > li:has(> menu)::after {
     content: "▾";
     display: inline-block;
 }
+.padding-below-footer {
+    height: 50px; /* Adjust the value as needed */
+}
 }
 .parallax-background {
     position: fixed;
