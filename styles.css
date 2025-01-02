@@ -182,3 +182,8 @@ a:visited {
 a:active {
     color: orange; /* Color when the link is being clicked */
 }
+
+.caption {
+    text-align: center; /* Center align the caption below the image */
+    margin-top: 10px; /* Add spacing above the caption */
+}
