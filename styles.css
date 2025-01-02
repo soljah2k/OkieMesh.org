@@ -124,7 +124,7 @@ menu > li:has(> menu)::after {
     display: flex;
     position: relative;
     width: 80%;
-    height: auto
+    height: auto;
     cursor: pointer;
     margin: 20px;
     margin-bottom: 20px;
