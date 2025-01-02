@@ -105,6 +105,10 @@ menu > li:has(> menu)::after {
 }
 .padding-below-footer {
     height: 50px; /* Adjust the value as needed */
+    width: 100%;
+    margin-bottom: 25px;
+    display: flex;
+
 }
 }
 .parallax-background {
@@ -163,7 +167,7 @@ menu > li:has(> menu)::after {
 
 /* Default state */
 a {
-    color: #335a41; /* Change this to your desired color */
+    color: #0592f0; /* Change this to your desired color */
     text-decoration: none; /* Remove underline if you prefer */
 }
 
