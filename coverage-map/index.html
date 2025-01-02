@@ -167,21 +167,22 @@
                         if (i != 0) {
                             var columns = line.split(',');
                             if (columns.length >= 1) {
-                                var lat = parseFloat(columns[1]);
-                                var lng = parseFloat(columns[2]);
-                                var intensity = parseFloat(columns[3]);
+                                var lat = parseFloat(columns[0]);
+                                var lng = parseFloat(columns[1]);
+                                var intensity = parseFloat(columns[2]);
                                 heatmapData.push([lat, lng, intensity]);
                             }
                         }
                     });
                     var heat = L.heatLayer(heatmapData, {
-                        radius: 25,
+                        radius: 40,
                         blur: 30,
-                        max: 200,
-                        maxZoom: 13,
+                        max: 1,
+                        maxZoom: 12,
                         minOpacity: .3,
                     }).addTo(map);
                 })
                 .catch(err => console.error('Error loading the CSV file:', err));
+                console.log(heatmapData);
         });
     </script>
