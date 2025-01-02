@@ -6,7 +6,7 @@
     --color-canvasText: #2C2D3C;
     --color-canvasTextDark: #107633;
     --color-canvasTextDarker: #062c13;
-    --ly-brand: #67EA94;
+    --ly-brand: #67ea94;
     --accent: #2ce26a;
     --dark-accent: #67EA94;
     --ly-bg-brand: #67EA94;
@@ -113,7 +113,7 @@ menu > li:has(> menu)::after {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('/images/mesh_bg.png'); /* Replace with your image path */
+    background-image: url('/images/mesh_bg.webp'); /* Replace with your image path */
     background-size: cover;
     background-attachment: scroll; /* Enables parallax effect */
     background-position: center;
@@ -145,7 +145,7 @@ menu > li:has(> menu)::after {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.95);
     color: #fff;
     display: flex;
     justify-content: center;
@@ -159,4 +159,26 @@ menu > li:has(> menu)::after {
 .spacer {
     margin: 20px;
 
+}
+
+/* Default state */
+a {
+    color: #335a41; /* Change this to your desired color */
+    text-decoration: none; /* Remove underline if you prefer */
+}
+
+/* Hover state */
+a:hover {
+    color: #0a160e /* Color when the user hovers over the link */
+    text-decoration: underline; /* Optional: Add underline on hover */
+}
+
+/* Visited state */
+a:visited {
+    color: purple; /* Color for visited links */
+}
+
+/* Active state */
+a:active {
+    color: orange; /* Color when the link is being clicked */
 }
