@@ -169,7 +169,7 @@ a {
 
 /* Hover state */
 a:hover {
-    color: #0a160e /* Color when the user hovers over the link */
+    color: #0a160e; /* Color when the user hovers over the link */
     text-decoration: underline; /* Optional: Add underline on hover */
 }
 
