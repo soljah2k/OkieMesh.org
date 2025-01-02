@@ -123,8 +123,8 @@ menu > li:has(> menu)::after {
 .image-container {
     display: flex;
     position: relative;
-    width: 500px;
-    height: 500px;
+    width: 80%;
+    height: auto
     cursor: pointer;
     margin: 20px;
     margin-bottom: 20px;
