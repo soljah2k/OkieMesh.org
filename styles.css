@@ -167,24 +167,24 @@ menu > li:has(> menu)::after {
 
 /* Default state */
 a {
-    color: #0592f0; /* Change this to your desired color */
+    color: #0592f0 !important; /* Change this to your desired color */
     text-decoration: none; /* Remove underline if you prefer */
 }
 
 /* Hover state */
 a:hover {
-    color: #0a160e; /* Color when the user hovers over the link */
+    color: #0a160e !important; /* Color when the user hovers over the link */
     text-decoration: underline; /* Optional: Add underline on hover */
 }
 
 /* Visited state */
 a:visited {
-    color: purple; /* Color for visited links */
+    color: purple !important; /* Color for visited links */
 }
 
 /* Active state */
 a:active {
-    color: orange; /* Color when the link is being clicked */
+    color: orange !important; /* Color when the link is being clicked */
 }
 
 .caption {
