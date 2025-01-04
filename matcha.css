@@ -178,7 +178,7 @@ body.layout-simple > aside a {
   }
 
   body.layout-simple:has(> aside:nth-of-type(2)) > :is(header:first-of-type, footer:last-of-type) {
-    margin-right: 0;
+    margin-right: 0px;
   }
 
   body.layout-simple > aside:nth-of-type(2) {
@@ -1339,7 +1339,7 @@ body > header:first-child, body > footer:last-child {
 }
 
 footer {
-  text-align: right;
+  text-align: center;
 }
 
 section {
