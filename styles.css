@@ -164,7 +164,7 @@ menu > li:has(> menu)::after {
 }
 .spacer {
     margin: 20px;
-
+    height: 20px;
 }
 
 /* Default state */
