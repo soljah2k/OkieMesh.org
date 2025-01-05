@@ -53,10 +53,10 @@ function addMarker({ name, description, lat, lon, type }) {
     .then(data => {
       console.log('API Response:', data); // Log the response
       const w3wAddress = data.words || 'N/A';
-      marker.bindPopup(`<b>${name}</b><br>${description}<br>Type: ${type}<br><b>What3Words:</b> ${w3wAddress}`);
+      marker.bindPopup(`<em>name:</em> <b>${name}</b> <br> <em>description: </em> <b>${description} <br> <em>Type:</em> <b> ${type} </b> <br><b>What3Words:</b> ${w3wAddress}`);
     })
     .catch(() => {
-      marker.bindPopup(`<b>${name}</b><br>${description}<br>Type: ${type}<br><b>What3Words:</b> Error fetching address`);
+      marker.bindPopup(`<sup>name:</sup> <b>${name}</b> <br> <sup>description:</sup> <br> <b>${description} <br> <sub>Type:</sub> <b> ${type} </b> <br><b>What3Words:</b> Error fetching address`);
     });
 
  // marker.bindPopup(`<b>${name}</b><br>${description}<br>Type: ${type}`);
