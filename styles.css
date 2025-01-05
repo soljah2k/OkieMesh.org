@@ -75,7 +75,7 @@ footer {
     align-items: center;
     display: flex;
     margin-top: 2rem;
-
+}
 .partner-heading img {
     margin-left: 0;
     margin-right: 10px;
@@ -106,16 +106,7 @@ menu > li:has(> menu)::after {
     display: inline-block;
 }
 .padding-below-footer {
-<<<<<<< HEAD
     height: 70px; /* Adjust the value as needed */
-=======
-    height: 50px; /* Adjust the value as needed */
-    width: 100%;
-    margin-bottom: 25px;
-    display: flex;
-
->>>>>>> 64ea1543144789f5772989cc3402bf5a7a31eac7
-}
 }
 .parallax-background {
     position: fixed;
@@ -171,6 +162,14 @@ menu > li:has(> menu)::after {
     height: 20px;
 }
 
+#map {
+    height: 500px;
+    width: fit-content 100%;
+    margin-bottom: 20px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+  }
+
 /* Default state */
 a {
     color: #0592f0 !important; /* Change this to your desired color */
@@ -197,3 +196,36 @@ a:active {
     text-align: center; /* Center align the caption below the image */
     margin-top: 10px; /* Add spacing above the caption */
 }
+
+  .container {
+    width: 80%;
+    max-width: 1200px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #555;
+  }
+  
+  input, select {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .lat-lon-display {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #333;
+  }
+  

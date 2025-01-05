@@ -46,7 +46,20 @@ function addMarker({ name, description, lat, lon, type }) {
     radius: 8,
   }).addTo(map);
 
-  marker.bindPopup(`<b>${name}</b><br>${description}<br>Type: ${type}`);
+
+  // Fetch the What3Words address
+  fetch(`https://api.what3words.com/v3/convert-to-3wa?coordinates=${lat},${lon}&key=EHAJSLPD`)
+    .then(response => response.json())
+    .then(data => {
+      console.log('API Response:', data); // Log the response
+      const w3wAddress = data.words || 'N/A';
+      marker.bindPopup(`<b>${name}</b><br>${description}<br>Type: ${type}<br><b>What3Words:</b> ${w3wAddress}`);
+    })
+    .catch(() => {
+      marker.bindPopup(`<b>${name}</b><br>${description}<br>Type: ${type}<br><b>What3Words:</b> Error fetching address`);
+    });
+
+ // marker.bindPopup(`<b>${name}</b><br>${description}<br>Type: ${type}`);
 }
 
 function addNode(e) {

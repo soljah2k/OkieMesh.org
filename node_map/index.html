@@ -1,23 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <title>Voulentary Node Registration | Okie Mesh</title>
+  <meta name="description" content="Tried and tested solar-powered repeater build methods and parts for making your own Meshtastic repeater.">
+  <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Okiemesh Node Map</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="../styles.css?v=2" />
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3GGJGF6M1L"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-3GGJGF6M1L');
+  </script>
 </head>
+<div class="parallax-background"></div>
+        <header>
+            <a href="/"><img src="/images/Okie-Mesh-Logo.svg" class="logo" alt="Logo for OKie Mesh" title="Okie Mesh" width="500" height="121" /></a>
+            <button onclick="document.getElementById('event').showModal()" class="default meet-button">📅 Upcoming Meeting 12/11</button>
+        </header>
+        
+<main>
+  <nav>
+    <menu>
+        <li><a href="/">Home</a></li>
+        <li>
+            <a href="/learn/">Learn</a>
+            <menu>
+                <li><a href="/learn/#about">About</a></li>
+                <li><a href="/learn/#coverage">Network coverage</a></li>
+                <li><a href="/learn/#comparisons">Similar technology</a></li>
+            </menu>
+        </li>
+        <li>
+            <a href="/join/">Join</a>
+            <menu>
+                <li><a href="/join/#network">Join the network</a></li>
+                <li><a href="/join/#best-practices">Best practices</a></li>
+                <li><a href="/join/#group">Join the group</a></li>
+            </menu>
+        </li>
+        <li>
+            <a href="/devices/">Devices & Hardware</a>
+            <menu>
+                <li><a href="/devices/#options">Options & Recommendations</a>
+                    <menu>
+                        <li><a href="/devices/#pocket-portable">Pocket/Portable</a></li>
+                        <li><a href="/devices/#stationary-solar">Stationary/Solar</a></li>
+                        <li><a href="/devices/#base-house">Base/House</a></li> 
+                        <li><a href="/devices/#repeater-instate">Repeater/In State</a></li>
+                        <li><a href="/devices/#repeater-incountry">Repeater/ In Country</a></li>
+                        <li><a href="/devices/#router">Router</a></li>
+                        <li><a href="/devices/#misc">Misc</a></li>   
+                        <li><a href="/devices/#antenna">Antenna</a></li>                          
+                    </menu>
+                </li>
+                <li><a href="/devices/#solar">Building a Solar Repeater</a>
+                    <menu>
+                        <li><a href="/devices/#history">History</a></li>
+                        <li><a href="/devices/#parts-list">Parts list</a></li>
+                    </menu>
+                </li>
+            </menu>
+        </li>
+        <li>
+            <a href="/similar-networks/">Similar networks</a>
+            <menu>
+                <li><a href="/similar-networks/#other-meshes">Other meshes</a></li>
+                <li><a href="/similar-networks/#start-a-similar-network">Start a similar network</a></li>
+                <li><a href="/similar-networks/#aredn-mesh">AREDN Mesh</a></li>
+            </menu>
+        </li>
+        <li><a href="/partners/">Partners</a></li>
+    </menu>
+</nav>      
 <body>
-  <div class="container">
-    <h1>Okiemesh Node Map</h1>
-    <div id="map"></div>
+  <div class="section" style="display: flex; justify-content: center; margin-bottom: 30px;">
+    <h1>Okiemesh voluntary node registry</h1>
+  </div>
+  <div>
+    <div id="map" ></div>
+  </div>
+  <div class="section" style=" display: flexbox; width: 100% !important; align-content: center !important; ">
     <form id="nodeForm">
-      <h3>Register a New Node</h3>
+      <h3 style="text-align: center;" >Register a New Node</h3>
       <label for="nodeName">Node Name:</label>
-      <input type="text" id="nodeName" required /><br />
+      <input type="text" placeholder="shortname-longname" id="nodeName" required /><br />
 
       <label for="description">Description:</label>
-      <input type="text" id="description" required /><br />
+      <input type="text" placeholder="Short Description" id="description" required /><br />
 
       <label for="latitude">Latitude:</label>
       <input type="number" id="latitude" step="0.000001" required /><br />
@@ -27,10 +104,10 @@
 
       <label for="nodeType">Node Type:</label>
       <select id="nodeType">
-        <option value="Router">Router</option>
-        <option value="Repeater">Repeater</option>
         <option value="Client">Client</option>
         <option value="Client_Mute">Client_Mute</option>
+        <option value="Router">Router</option>
+        <option value="Repeater">Repeater</option>
         <option value="Other">Other</option>
       </select><br />
 
@@ -38,6 +115,7 @@
     </form>
   </div>
   <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
-  <script src="/node_map/map.js"></script>
+  <script src="./map.js"></script>
 </body>
+</main>
 </html>
