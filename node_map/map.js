@@ -1,6 +1,3 @@
-// Assuming your site is served on GitHub Pages, we can't directly write to a CSV file from the browser.
-// Instead, we'll use localStorage to store nodes and load them on page refresh.
-
 const map = L.map('map').setView([35.4676, -97.5164], 8); // Default view for Oklahoma
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -30,8 +27,28 @@ map.on('click', function (e) {
 });
 
 // Load existing nodes from localStorage
-var nodes = JSON.parse(localStorage.getItem('nodes')) || [];
-nodes.forEach(node => addMarker(node));
+const username = 'admin';
+const password = '9PlPUqBvz58v8u0ozYw4';
+const encodedAuth = btoa(`${username}:${password}`);
+
+fetch('https://node.lundholmtech.com/nodes', {
+  method: 'GET',
+  headers: {
+    'Authorization': `Basic ${encodedAuth}`
+  }
+})
+.then(response => {
+  console.log('Response status:', response.status);
+  return response.text(); // Change to text() to log the raw response
+})
+.then(data => {
+  console.log('Raw response:', data); // Log the raw response
+  const jsonData = JSON.parse(data); // Try parsing after confirming it's valid JSON
+  jsonData.forEach(node => addMarker(node));
+})
+.catch(error => {
+  console.error('Error loading nodes:', error);
+});
 
 function addMarker({ name, description, lat, lon, type }) {
   const colors = {
