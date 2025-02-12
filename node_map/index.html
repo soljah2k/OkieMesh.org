@@ -21,11 +21,23 @@
   </script>
 </head>
 <div class="parallax-background"></div>
-        <header>
-            <a href="/"><img src="/images/Okie-Mesh-Logo.svg" class="logo" alt="Logo for OKie Mesh" title="Okie Mesh" width="500" height="121" /></a>
-            <button onclick="document.getElementById('event').showModal()" class="default meet-button">📅 Upcoming Meeting 1.18.25</button>
-        </header>
-        
+<script src="/loadContent.js"></script>
+<header>
+    <a href="/"><img src="/images/Okie-Mesh-Logo.svg" class="logo" alt="Logo for OKie Mesh" title="Okie Mesh" width="500" height="121" /></a>
+    <button onclick="document.getElementById('meeting-placeholder').showModal()" class="default meet-button">📅 Upcoming Meeting</button>
+</header>
+<dialog id="meeting-placeholder">
+    <header>
+        <h1>Okie Mesh Meeting</h1>
+            <p>
+                TBA
+            </p>
+        <form method="dialog">
+            <a class="default" href="https://discord.gg/MebnGdYQZg?event=1283623314123784293" type="button">Save the date</a>
+            <button type="submit">Close</button>
+        </form>
+    </footer>
+</dialog>
 <main>
   <nav>
     <menu>
