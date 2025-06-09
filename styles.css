@@ -184,7 +184,7 @@ a:hover {
 
 /* Visited state */
 a:visited {
-    color: purple !important; /* Color for visited links */
+    color: hwb(249 3% 23%) !important; /* Color for visited links */
 }
 
 /* Active state */
