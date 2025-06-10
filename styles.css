@@ -172,19 +172,19 @@ menu > li:has(> menu)::after {
 
 /* Default state */
 a {
-    color: #0592f0 !important; /* Change this to your desired color */
+    color: #34c408 !important; /* Change this to your desired color */
     text-decoration: none; /* Remove underline if you prefer */
 }
 
 /* Hover state */
 a:hover {
-    color: #0a160e !important; /* Color when the user hovers over the link */
+    color: #43ff0a !important; /* Color when the user hovers over the link */
     text-decoration: underline; /* Optional: Add underline on hover */
 }
 
 /* Visited state */
 a:visited {
-    color: hwb(249 3% 23%) !important; /* Color for visited links */
+    color: #34c408 !important; /* Color for visited links */
 }
 
 /* Active state */
@@ -229,3 +229,11 @@ a:active {
     color: #333;
   }
   
+  #aerdn-map {
+    min-height: 250px;
+    height: auto;
+    max-height: 500px;
+    border-color: #34c408;
+    border-style: inset ;
+    border-width:4px
+  }
