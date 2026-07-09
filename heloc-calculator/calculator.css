@@ -1,0 +1,121 @@
+#heloc-form fieldset {
+    border: 1px solid var(--color-canvasBorder, #565764);
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+#heloc-form button {
+    margin-top: 10px;
+}
+.calc-error {
+    background: #e34948;
+    border-radius: 6px;
+    color: #fff;
+    padding: 10px 14px;
+}
+.disclaimer {
+    background: rgba(237, 161, 0, 0.12);
+    border-left: 4px solid #eda100;
+    padding: 10px 14px;
+}
+.results-summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 20px 0;
+}
+.result-card {
+    background: var(--color-canvasDark);
+    border-radius: 8px;
+    flex: 1 1 220px;
+    padding: 16px;
+}
+.result-card h3 {
+    margin-top: 0;
+}
+.result-card.highlight {
+    border: 2px solid #1baf7a;
+}
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+/* Chart (see dataviz skill palette reference) */
+.viz-root {
+    --surface-1:      #fcfcfb;
+    --text-primary:   #0b0b0b;
+    --text-secondary: #52514e;
+    --text-muted:     #898781;
+    --gridline:       #e1e0d9;
+    --baseline-axis:  #c3c2b7;
+    --series-baseline: #2a78d6;
+    --series-strategy: #1baf7a;
+    background: var(--surface-1);
+    border-radius: 8px;
+    padding: 12px;
+    position: relative;
+}
+@media (prefers-color-scheme: dark) {
+    .viz-root {
+        --surface-1:      #1a1a19;
+        --text-primary:   #ffffff;
+        --text-secondary: #c3c2b7;
+        --text-muted:     #898781;
+        --gridline:       #2c2c2a;
+        --baseline-axis:  #383835;
+        --series-baseline: #3987e5;
+        --series-strategy: #199e70;
+    }
+}
+.chart-legend {
+    display: flex;
+    gap: 20px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+.legend-item {
+    align-items: center;
+    display: inline-flex;
+    gap: 6px;
+}
+.swatch {
+    border-radius: 2px;
+    display: inline-block;
+    height: 10px;
+    width: 20px;
+}
+.swatch-baseline { background: var(--series-baseline); }
+.swatch-strategy { background: var(--series-strategy); }
+#chart {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+.chart-gridline { stroke: var(--gridline); stroke-width: 1; }
+.chart-axis { stroke: var(--baseline-axis); stroke-width: 1; }
+.chart-axis-label { fill: var(--text-muted); font-size: 12px; }
+.chart-line-baseline { fill: none; stroke: var(--series-baseline); stroke-width: 2; }
+.chart-line-strategy { fill: none; stroke: var(--series-strategy); stroke-width: 2; }
+.chart-crosshair { stroke: var(--text-muted); stroke-width: 1; stroke-dasharray: 3 3; }
+.chart-dot-baseline { fill: var(--series-baseline); }
+.chart-dot-strategy { fill: var(--series-strategy); }
+.chart-hover-rect { fill: transparent; }
+.chart-tooltip {
+    background: var(--surface-1);
+    border: 1px solid var(--gridline);
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    color: var(--text-primary);
+    font-size: 13px;
+    padding: 8px 10px;
+    pointer-events: none;
+    position: absolute;
+    white-space: nowrap;
+}
+.chart-tooltip .tt-baseline { color: var(--series-baseline); }
+.chart-tooltip .tt-strategy { color: var(--series-strategy); }
