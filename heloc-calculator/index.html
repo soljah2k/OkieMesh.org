@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>HELOC Mortgage Payoff Calculator | Okie Mesh</title>
+        <meta name="description" content="Estimate how using a HELOC to pay down mortgage principal faster could shorten your payoff time and reduce total interest.">
+        <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1.0">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+        <link rel="stylesheet" href="../styles.css?v=2">
+        <link rel="stylesheet" href="calculator.css">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-3GGJGF6M1L"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-3GGJGF6M1L');
+        </script>
+    </head>
+    <body>
+        <div class="parallax-background"></div>
+        <script src="/loadContent.js"></script>
+        <header>
+            <a href="/"><img src="/images/Okie-Mesh-Logo.svg" class="logo" alt="Logo for OKie Mesh" title="Okie Mesh" width="500" height="121" /></a>
+            <button onclick="document.getElementById('meeting-placeholder').showModal()" class="default meet-button">📅 Upcoming Meeting</button>
+        </header>
+        <dialog id="meeting-placeholder">
+            <header>
+                <h1>Okie Mesh Meeting</h1>
+                    <p>
+                        TBA
+                    </p>
+                <form method="dialog">
+                    <a class="default" href="https://discord.gg/MebnGdYQZg?event=1283623314123784293" type="button">Save the date</a>
+                    <button type="submit">Close</button>
+                </form>
+            </header>
+        </dialog>
+        <main>
+            <nav>
+                <menu>
+                    <li><a href="/">Home</a></li>
+                    <li>
+                        <a href="/learn/">Learn</a>
+                        <menu>
+                            <li><a href="/learn/#about">About</a></li>
+                            <li><a href="/learn/#coverage">Network coverage</a></li>
+                            <li><a href="/learn/#comparisons">Similar technology</a></li>
+                        </menu>
+                    </li>
+                    <li>
+                        <a href="/join/">Join</a>
+                        <menu>
+                            <li><a href="/join/#network">Join the network</a></li>
+                            <li><a href="/join/#best-practices">Best practices</a></li>
+                            <li><a href="/join/#group">Join the group</a></li>
+                        </menu>
+                    </li>
+                    <li>
+                        <a href="/devices/">Devices & Hardware</a>
+                        <menu>
+                            <li><a href="/devices/#options">Options & Recommendations</a>
+                                <menu>
+                                    <li><a href="/devices/#pocket-portable">Pocket/Portable</a></li>
+                                    <li><a href="/devices/#stationary-solar">Stationary/Solar</a></li>
+                                    <li><a href="/devices/#base-house">Base/House</a></li>
+                                    <li><a href="/devices/#repeater-instate">Repeater/In State</a></li>
+                                    <li><a href="/devices/#repeater-incountry">Repeater/ In Country</a></li>
+                                    <li><a href="/devices/#router">Router</a></li>
+                                    <li><a href="/devices/#misc">Misc</a></li>
+                                    <li><a href="/devices/#antenna">Antenna</a></li>
+                                </menu>
+                            </li>
+                            <li><a href="/devices/#solar">Building a Solar Repeater</a>
+                                <menu>
+                                    <li><a href="/devices/#history">History</a></li>
+                                    <li><a href="/devices/#parts-list">Parts list</a></li>
+                                </menu>
+                            </li>
+                        </menu>
+                    </li>
+                    <li>
+                        <a href="/similar-networks/">Similar networks</a>
+                        <menu>
+                            <li><a href="/similar-networks/#other-meshes">Other meshes</a></li>
+                            <li><a href="/similar-networks/#start-a-similar-network">Start a similar network</a></li>
+                            <li><a href="/similar-networks/#aredn-mesh">AREDN Mesh</a></li>
+                        </menu>
+                    </li>
+                    <li><a href="/partners/">Partners</a></li>
+                    <li><a href="/heloc-calculator/">HELOC Calculator</a></li>
+                </menu>
+            </nav>
+            <hgroup>
+                <h1>HELOC Mortgage Payoff Calculator</h1>
+                <p>Estimate how putting a Home Equity Line of Credit to work against your mortgage principal could change your payoff timeline and total interest cost.</p>
+            </hgroup>
+
+            <section id="about">
+                <h2>How this strategy works</h2>
+                <p>A <a href="https://en.wikipedia.org/wiki/Home_equity_line_of_credit" target="_blank" rel="noopener">HELOC</a> is a revolving line of credit secured by the equity in your home. Some homeowners use a HELOC to make one lump-sum principal payment against their mortgage, then aggressively pay off the smaller HELOC balance with monthly cash flow (this is sometimes marketed as "velocity banking"). The idea is that shrinking your mortgage principal sooner reduces the interest that accrues on it every month, even though you're now also paying interest on the HELOC in the meantime.</p>
+                <p>This calculator simulates both paths side by side, month by month:</p>
+                <ul>
+                    <li><strong>Baseline:</strong> your mortgage, paid as scheduled, with no changes.</li>
+                    <li><strong>HELOC strategy:</strong> a lump sum drawn from your HELOC is applied to your mortgage principal immediately, then your extra monthly cash flow pays down the HELOC. Once the HELOC is paid off, that same monthly amount is redirected to extra mortgage principal payments.</li>
+                </ul>
+                <p class="disclaimer"><strong>Before you try this:</strong> the benefit of this strategy comes almost entirely from the extra monthly amount you put toward debt, not from the HELOC itself. Many financial advisors point out that simply sending that same extra amount straight to your mortgage principal every month &mdash; with no HELOC, no variable rate, and no risk of a lender freezing or reducing your credit line &mdash; produces very similar savings without pledging additional access to your home's equity. Run both scenarios (set the HELOC draw to $0 to see the "just pay extra" case) and compare. This tool is for education only, not financial advice; talk to a fee-only financial advisor or your lender before restructuring debt secured by your home.</p>
+            </section>
+
+            <section id="calculator">
+                <h2>Calculator</h2>
+                <form id="heloc-form">
+                    <fieldset>
+                        <legend>Your mortgage</legend>
+                        <label for="mortgage-balance">Current mortgage balance ($)</label>
+                        <input type="number" id="mortgage-balance" min="0" step="any" value="250000" required>
+
+                        <label for="mortgage-rate">Mortgage interest rate (annual %)</label>
+                        <input type="number" id="mortgage-rate" min="0" max="20" step="any" value="6.5" required>
+
+                        <label for="mortgage-years">Years remaining on the mortgage</label>
+                        <input type="number" id="mortgage-years" min="1" max="40" step="any" value="25" required>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Your HELOC</legend>
+                        <label for="heloc-limit">HELOC credit limit ($)</label>
+                        <input type="number" id="heloc-limit" min="0" step="any" value="40000" required>
+
+                        <label for="heloc-rate">HELOC interest rate (annual %)</label>
+                        <input type="number" id="heloc-rate" min="0" max="25" step="any" value="9.5" required>
+
+                        <label for="heloc-draw">Lump sum drawn from HELOC to pay toward mortgage principal ($)</label>
+                        <input type="number" id="heloc-draw" min="0" step="any" value="30000" required>
+
+                        <label for="extra-monthly">Extra monthly amount you can put toward paying off the HELOC ($/month)</label>
+                        <input type="number" id="extra-monthly" min="0" step="any" value="800" required>
+                    </fieldset>
+
+                    <button type="submit">Calculate</button>
+                </form>
+                <p id="calc-error" class="calc-error" hidden></p>
+            </section>
+
+            <section id="results" hidden>
+                <h2>Results</h2>
+                <div class="results-summary">
+                    <div class="result-card">
+                        <h3>Baseline (mortgage only)</h3>
+                        <p>Payoff time: <span id="baseline-time"></span></p>
+                        <p>Total interest paid: <span id="baseline-interest"></span></p>
+                    </div>
+                    <div class="result-card">
+                        <h3>HELOC strategy</h3>
+                        <p>Debt-free in: <span id="strategy-time"></span></p>
+                        <p>Total interest paid (mortgage + HELOC): <span id="strategy-interest"></span></p>
+                    </div>
+                    <div class="result-card highlight">
+                        <h3>Difference</h3>
+                        <p>Time saved: <span id="time-saved"></span></p>
+                        <p>Interest saved: <span id="interest-saved"></span></p>
+                    </div>
+                </div>
+
+                <div class="viz-root" id="chart-wrapper">
+                    <div class="chart-legend">
+                        <span class="legend-item"><span class="swatch swatch-baseline"></span>Baseline mortgage balance</span>
+                        <span class="legend-item"><span class="swatch swatch-strategy"></span>HELOC strategy total debt</span>
+                    </div>
+                    <svg id="chart" viewBox="0 0 800 420" role="img" aria-labelledby="chart-title"></svg>
+                    <p id="chart-title" class="visually-hidden">Remaining debt balance by year, comparing the baseline mortgage to the HELOC payoff strategy.</p>
+                    <div id="chart-tooltip" class="chart-tooltip" hidden></div>
+                </div>
+
+                <details id="table-view">
+                    <summary>Show year-by-year balance table</summary>
+                    <div class="table-wrapper">
+                        <table id="balance-table">
+                            <thead>
+                                <tr>
+                                    <th>Year</th>
+                                    <th>Baseline mortgage balance</th>
+                                    <th>HELOC strategy total debt</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </details>
+            </section>
+        </main>
+
+        <div class="footer-spacing"></div>
+        <div class="footer">
+            <footer>
+                <p>This website is a fork of <a href="https://austinmesh.org/">AustinMesh.Org</a> which is <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode.en/" target="_blank">(C)</a> by Tommy Ekstrand.</p>
+            </footer>
+        </div>
+    </body>
+    <script src="calculator.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelector("header").classList.add("loaded");
+        });
+    </script>
+</html>
