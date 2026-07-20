@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  @apply bg-void text-ink antialiased;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(34, 211, 238, 0.08), transparent),
+    radial-gradient(ellipse 60% 40% at 90% 110%, rgba(236, 72, 153, 0.05), transparent);
+  background-attachment: fixed;
+}
+
+/* faint blueprint grid over the whole app */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(139, 152, 169, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(139, 152, 169, 0.045) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: radial-gradient(ellipse 90% 80% at 50% 0%, black 40%, transparent 100%);
+}
+
+.panel {
+  @apply rounded-2xl border border-line bg-panel/80 shadow-card backdrop-blur-sm;
+}
+
+.panel-title {
+  @apply font-mono text-[11px] uppercase tracking-[0.18em] text-faint;
+}
+
+.chip {
+  @apply inline-flex items-center gap-1.5 rounded-full border border-line bg-raised px-2.5 py-0.5 font-mono text-[11px] text-muted;
+}
+
+/* scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2a3a4f transparent;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-thumb {
+  background: #2a3a4f;
+  border-radius: 8px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* blinking console caret */
+@keyframes caret-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+.caret::after {
+  content: "▍";
+  margin-left: 1px;
+  color: #22d3ee;
+  animation: caret-blink 1s steps(1) infinite;
+}
+
+::selection {
+  background: rgba(34, 211, 238, 0.28);
+}

@@ -1,0 +1,34 @@
+{
+  "$comment": "Agent registry for Mission Control. Edit this file to add/remove agents. kind: 'claude-cli' uses the Claude Code CLI bridge; 'cli' runs a local command with the prompt appended (or substituted for {prompt}); 'http' POSTs { prompt } as JSON to `url`. Commands come ONLY from this file on disk — never from the browser.",
+  "agents": [
+    {
+      "id": "claude",
+      "name": "Claude",
+      "callsign": "PRIME",
+      "tagline": "Claude Code CLI bridge — full agentic control",
+      "kind": "claude-cli",
+      "accent": "cyan",
+      "healthCommand": "claude --version"
+    },
+    {
+      "id": "openclaw",
+      "name": "OpenClaw",
+      "callsign": "TALON",
+      "tagline": "OpenClaw agent — local gateway",
+      "kind": "cli",
+      "accent": "amber",
+      "command": "openclaw agent --message {prompt}",
+      "healthCommand": "openclaw --version"
+    },
+    {
+      "id": "hermes",
+      "name": "Hermes",
+      "callsign": "COURIER",
+      "tagline": "Hermes agent — HTTP endpoint",
+      "kind": "http",
+      "accent": "rose",
+      "url": "http://127.0.0.1:8788/chat",
+      "healthUrl": "http://127.0.0.1:8788/health"
+    }
+  ]
+}
