@@ -91,6 +91,7 @@
                     </li>
                     <li><a href="/partners/">Partners</a></li>
                     <li><a href="/heloc-calculator/">HELOC Calculator</a></li>
+                    <li><a href="/hermes/">Hermes + iMessage</a></li>
                 </menu>
             </nav>
             <hgroup>
@@ -112,22 +113,22 @@
             <section id="about">
                 <h2>All about Okie Mesh and Meshtastic</h2>
                 <h3>How does it work?</h3>
-                <p>We have set up a number of solar-powered radio repeaters in Oklahoma. These radios communicate on the <a href="https://en.wikipedia.org/wiki/33-centimeter_band">906.875 MHZ</a> frequency using the <a href="https://en.wikipedia.org/wiki/LoRa">LoRa protocol</a>. The radios mesh using the open-source <a href="https://meshtastic.org/">Meshtastic</a> software. Users can connect to these repeaters by Bluetooth if they’re close enough or they can use their own handheld nodes which will also act as repeaters. The messages hop from node to node, extending the reach of the network and ensuring everyone receives every message.</p>
+                <p>We have set up a number of solar-powered radio repeaters in Oklahoma. These radios communicate on the <a href="https://en.wikipedia.org/wiki/33-centimeter_band">906.875 MHZ</a> frequency using the <a href="https://en.wikipedia.org/wiki/LoRa">LoRa protocol</a>. The radios mesh using the open-source <a href="https://meshtastic.org/">Meshtastic</a> software. Users can connect to these repeaters by Bluetooth if they're close enough or they can use their own handheld nodes which will also act as repeaters. The messages hop from node to node, extending the reach of the network and ensuring everyone receives every message.</p>
                 <h3 id="eli5">Can you explain it like I'm 5?</h3>
                 <p>Pretend you're sitting in class and want to send a note to everyone in the class. You write your note on a piece of paper and copy it three times. The message can be up to 228 characters - about as long as this paragraph so far. You hand those three pieces of paper to the three people around you. Then those three people re-write the message three times and hand it to the three people around them and so on. Now imagine a big gust of wind comes and blows away some of the messages. If even just a few people saw the note and keep copying and re-sending it, eventually everyone will get a copy of the note. This is like sending an unencrypted message to everyone on the network.</p>
                 <p>Now imagine you want to send a message to a single person or a select group of people but you don't want other people who see the note to be able to read it. You could write the note using a secret language. You could then hand a decoder key to your friend or to a group of friends and they could decode the message. The message still gets passed the same way - with every single person writing the message a few times and handing it to everyone - but only those people with the decoder key will be able to understand the message. This is like sending an encrypted direct message or encrypted group message.</p>
-                <p>Okie Mesh works the same way as this paper example, but instead of sending paper notes we're using digital text messages and sending it with radio waves. Our radios are solar powered and they don’t need any internet or cell phone coverage. This means they will work even if the power is out.</p>
+                <p>Okie Mesh works the same way as this paper example, but instead of sending paper notes we're using digital text messages and sending it with radio waves. Our radios are solar powered and they don't need any internet or cell phone coverage. This means they will work even if the power is out.</p>
                 <h3>What can it do?</h3>
                 <p>Meshtastic is a bit like a decentralized social media platform or SMS text messaging. It has a number of different features which will be familiar to anyone who has sent a text message or posted on social media.</p>
                 <dl>
                     <dt>1) Primary Channel:</dt>
-                    <dd>You can broadcast an unencrypted message to the Primary Channel and everyone on your mesh will see it. This is a bit like “posting” publicly on a social media platform.</dd>
+                    <dd>You can broadcast an unencrypted message to the Primary Channel and everyone on your mesh will see it. This is a bit like "posting" publicly on a social media platform.</dd>
                     <dt>2) Group Channels:</dt>
                     <dd>You can send an encrypted message to a select group of people on a Secondary Channel and everyone who is subscribed to that channel will get it. People can join the channel if you provide them with an encryption key which you can send to them via Direct Message or which they can scan from a QR code in person. This is a bit like a private group on social media, or a group text message chain on SMS.</dd>
                     <dt>3) Direct Messages:</dt>
                     <dd>You can send encrypted direct messages to people on the mesh. This is like a private text message or a DM on social medial.</dd>
                     <dt>4) Location:</dt>
-                    <dd>If you choose to enable it you can send your location to the mesh and it will show up on everyone’s map in the app.</dd>
+                    <dd>If you choose to enable it you can send your location to the mesh and it will show up on everyone's map in the app.</dd>
                     <dt>5) Connect Worldwide:</dt>
                     <dd>If anyone on your local mesh is running an MQTT gateway your local mesh will connect to the other meshes around the world. This can allow you to broadcast messages to everyone globally or send encrypted messages to groups or individuals worldwide.</dd>
                     <dt>6) Telemetry Data:</dt>
@@ -158,7 +159,7 @@
                     <dt>iGates</dt>
                     <dd>MQTT Gateways are like APRS iGates – they repeat all local traffic over the internet to other MQTT Gateways around the world.</dd>
                     <dt>ANSRVR</dt>
-                    <dd>APRS users can subscribe to groups using the ANSRVR service. This allows for group chats like the popular #APRSThursday net. Meshtastic has “Secondary Channels” that can be subscribe to, allowing users to send messages to everyone on the channel.</dd>
+                    <dd>APRS users can subscribe to groups using the ANSRVR service. This allows for group chats like the popular #APRSThursday net. Meshtastic has "Secondary Channels" that can be subscribe to, allowing users to send messages to everyone on the channel.</dd>
                     <dt>Burst</dt>
                     <dd>APRS uses the AX.25 protocol which sends messages using data bursts between 0.3 and 0.5 seconds long. Meshtastic uses the LoRa protocol which sends messages in data bursts between 0.5 and 10 seconds long.</dd>
                 </dl>
@@ -166,7 +167,7 @@
                 <p>But Meshtastic is also <strong>different</strong> than APRS in a few ways:</p>
                 <dl>
                     <dt>Primary</dt>
-                    <dd>APRS doesn’t have a way to broadcast a message to everyone on the network. Messages sent to Meshtastic's Primary Channel go to everyone.</dd>
+                    <dd>APRS doesn't have a way to broadcast a message to everyone on the network. Messages sent to Meshtastic's Primary Channel go to everyone.</dd>
                     <dt>Encryption</dt>
                     <dd>APRS is unencrypted because it is illegal to use encryption over ham radio. Meshtastic is encrypted for communications on private group channels and for direct messages between users, because it runs on the 900 MHz ISM band, which does not have restrictions on encryption.</dd>
                     <dt>License</dt>
@@ -174,7 +175,7 @@
                     <dt>Equipment Cost</dt>
                     <dd>APRS capable handheld ham radios cost upwards of $400. Meshtastic radios cost less than $100.</dd>
                     <dt>Email</dt>
-                    <dd>APRS has services which allow users to send emails and SMS text messages to people who aren’t ham radio users. Meshtastic does not have this feature but it could be added in the future.</dd>
+                    <dd>APRS has services which allow users to send emails and SMS text messages to people who aren't ham radio users. Meshtastic does not have this feature but it could be added in the future.</dd>
                     <dt>Simplicity</dt>
                     <dd>APRS is quite a bit more difficult to use than Meshtastic. APRS does not have any standardized user interface – there are dozens of software packages available. Meshtastic has a standardized iPhone and Android app which is easy to understand for new users.</dd>
                 </dl>
