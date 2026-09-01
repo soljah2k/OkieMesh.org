@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Hermes iMessage Setup | Okie Mesh</title>
+        <meta name="description" content="Step-by-step guide to setting up Hermes to send and receive Meshtastic messages via iMessage on your iPhone — no radio in hand required.">
+        <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1.0">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+        <link rel="stylesheet" href="../styles.css?v=2">
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-3GGJGF6M1L"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-3GGJGF6M1L');
+        </script>
+    </head>
+    <body>
+        <div class="parallax-background"></div>
+        <script src="/loadContent.js"></script>
+        <header>
+            <a href="/"><img src="/images/Okie-Mesh-Logo.svg" class="logo" alt="Logo for Okie Mesh" title="Okie Mesh" width="500" height="121" /></a>
+            <button onclick="document.getElementById('meeting-placeholder').showModal()" class="default meet-button">📅 Upcoming Meeting</button>
+        </header>
+        <dialog id="meeting-placeholder">
+            <header>
+                <h1>Okie Mesh Meeting</h1>
+                    <p>
+                        TBA
+                    </p>
+                <form method="dialog">
+                    <a class="default" href="https://discord.gg/MebnGdYQZg?event=1283623314123784293" type="button">Save the date</a>
+                    <button type="submit">Close</button>
+                </form>
+            </header>
+        </dialog>
+        <main>
+            <nav>
+                <menu>
+                    <li><a href="/">Home</a></li>
+                    <li>
+                        <a href="/learn/">Learn</a>
+                        <menu>
+                            <li><a href="/learn/#about">About</a></li>
+                            <li><a href="/learn/#coverage">Network coverage</a></li>
+                            <li><a href="/learn/#comparisons">Similar technology</a></li>
+                        </menu>
+                    </li>
+                    <li>
+                        <a href="/join/">Join</a>
+                        <menu>
+                            <li><a href="/join/#network">Join the network</a></li>
+                            <li><a href="/join/#best-practices">Best practices</a></li>
+                            <li><a href="/join/#group">Join the group</a></li>
+                        </menu>
+                    </li>
+                    <li>
+                        <a href="/devices/">Devices &amp; Hardware</a>
+                        <menu>
+                            <li><a href="/devices/#options">Options &amp; Recommendations</a>
+                                <menu>
+                                    <li><a href="/devices/#pocket-portable">Pocket/Portable</a></li>
+                                    <li><a href="/devices/#stationary-solar">Stationary/Solar</a></li>
+                                    <li><a href="/devices/#base-house">Base/House</a></li>
+                                    <li><a href="/devices/#repeater-instate">Repeater/In State</a></li>
+                                    <li><a href="/devices/#repeater-incountry">Repeater/In Country</a></li>
+                                    <li><a href="/devices/#router">Router</a></li>
+                                    <li><a href="/devices/#misc">Misc</a></li>
+                                    <li><a href="/devices/#antenna">Antenna</a></li>
+                                </menu>
+                            </li>
+                            <li><a href="/devices/#solar">Building a Solar Repeater</a>
+                                <menu>
+                                    <li><a href="/devices/#history">History</a></li>
+                                    <li><a href="/devices/#parts-list">Parts list</a></li>
+                                </menu>
+                            </li>
+                        </menu>
+                    </li>
+                    <li>
+                        <a href="/similar-networks/">Similar networks</a>
+                        <menu>
+                            <li><a href="/similar-networks/#other-meshes">Other meshes</a></li>
+                            <li><a href="/similar-networks/#start-a-similar-network">Start a similar network</a></li>
+                            <li><a href="/similar-networks/#aredn-mesh">AREDN Mesh</a></li>
+                        </menu>
+                    </li>
+                    <li><a href="/partners/">Partners</a></li>
+                    <li><a href="/heloc-calculator/">HELOC Calculator</a></li>
+                    <li>
+                        <a href="/hermes/" aria-current="page">Hermes + iMessage</a>
+                    </li>
+                </menu>
+            </nav>
+
+            <h1>Hermes + iMessage Setup</h1>
+            <p>Hermes is a free macOS app that acts as a bridge between your Meshtastic radio and Apple's iMessage. Once running, it lets any iPhone send and receive Meshtastic messages through the standard Messages app — no radio in hand, no Bluetooth pairing required on the phone itself.</p>
+
+            <ul>
+                <li><a href="#how-it-works">How it works</a></li>
+                <li><a href="#requirements">Requirements</a></li>
+                <li><a href="#install-hermes">Install Hermes</a></li>
+                <li><a href="#configure-hermes">Configure Hermes</a></li>
+                <li><a href="#pair-your-phone">Pair your iPhone</a></li>
+                <li><a href="#using-hermes">Using Hermes</a></li>
+                <li><a href="#tips">Tips &amp; Troubleshooting</a></li>
+            </ul>
+
+            <!-- ── How it works ─────────────────────────────────────── -->
+            <section id="how-it-works">
+                <h2>How it works</h2>
+                <p>A Mac running Hermes stays connected to a Meshtastic radio (via USB or Bluetooth). When a Meshtastic message arrives, Hermes forwards it to a designated iMessage address. When someone replies to that iMessage, Hermes sends the reply out over the mesh. The flow looks like this:</p>
+                <pre>
+iPhone (Messages app)
+      ↕  iMessage
+Mac running Hermes
+      ↕  USB / Bluetooth
+Meshtastic Radio
+      ↕  LoRa RF
+Rest of the Okie Mesh network
+                </pre>
+                <p>The Mac acts as a always-on gateway. It does <strong>not</strong> need to be near the iPhone — it just needs to be powered on, connected to the radio, and have an internet connection for iMessage delivery.</p>
+            </section>
+
+            <!-- ── Requirements ────────────────────────────────────── -->
+            <section id="requirements">
+                <h2>Requirements</h2>
+                <ul>
+                    <li><strong>Mac</strong> running macOS 13 Ventura or later (Apple Silicon or Intel)</li>
+                    <li><strong>Apple ID</strong> signed in to iMessage on that Mac (<em>Settings → Apple ID → iMessage</em>)</li>
+                    <li><strong>Meshtastic radio</strong> connected to the Mac via USB-C/USB serial <em>or</em> Bluetooth</li>
+                    <li><strong>Meshtastic firmware</strong> 2.3 or later on the radio</li>
+                    <li>An <strong>iPhone</strong> (or any Apple device) you want to use as the remote interface — it just needs the standard Messages app</li>
+                </ul>
+                <p><strong>Note:</strong> Hermes is an open-source community project, not an official Meshtastic product. Check the <a href="https://github.com/meshtastic/Hermes" target="_blank" rel="noopener">Hermes GitHub repo</a> for the latest requirements.</p>
+            </section>
+
+            <!-- ── Install Hermes ───────────────────────────────────── -->
+            <section id="install-hermes">
+                <h2>Install Hermes</h2>
+                <ol>
+                    <li>
+                        <strong>Download Hermes</strong><br>
+                        Go to the <a href="https://github.com/meshtastic/Hermes/releases" target="_blank" rel="noopener">Hermes Releases page</a> on GitHub and download the latest <code>.dmg</code> file.
+                    </li>
+                    <li>
+                        <strong>Open the DMG</strong><br>
+                        Double-click the downloaded <code>.dmg</code>, then drag the <strong>Hermes</strong> app into your <code>/Applications</code> folder.
+                    </li>
+                    <li>
+                        <strong>Allow the app to run</strong><br>
+                        Because Hermes is not distributed through the Mac App Store you may see a security warning the first time you open it. Go to <em>System Settings → Privacy &amp; Security</em>, scroll down, and click <strong>Open Anyway</strong> next to the Hermes entry.
+                    </li>
+                    <li>
+                        <strong>Grant permissions</strong><br>
+                        Hermes will ask for access to <strong>Contacts</strong> and <strong>Bluetooth</strong>. Grant both — Contacts is used to resolve phone numbers, and Bluetooth is needed if you connect your radio wirelessly.
+                    </li>
+                </ol>
+            </section>
+
+            <!-- ── Configure Hermes ────────────────────────────────── -->
+            <section id="configure-hermes">
+                <h2>Configure Hermes</h2>
+                <ol>
+                    <li>
+                        <strong>Connect your radio</strong><br>
+                        Plug your Meshtastic radio into the Mac with a USB cable, or turn on Bluetooth and pair it first via <em>System Settings → Bluetooth</em>.
+                    </li>
+                    <li>
+                        <strong>Open Hermes Preferences</strong><br>
+                        Launch Hermes, then open <em>Hermes → Settings</em> (⌘,).
+                    </li>
+                    <li>
+                        <strong>Select your radio</strong><br>
+                        Under <em>Radio Connection</em>, choose <strong>USB / Serial</strong> or <strong>Bluetooth</strong> and select your radio from the dropdown. Hermes will show a green indicator once connected.
+                    </li>
+                    <li>
+                        <strong>Set your iMessage relay address</strong><br>
+                        Under <em>iMessage</em>, enter the Apple ID email address or phone number that Hermes should use to relay messages. This is the address that will appear as the sender on your iPhone. Using a dedicated Apple ID for the relay (rather than your personal one) is recommended so you can tell mesh messages apart at a glance.
+                    </li>
+                    <li>
+                        <strong>Choose which Meshtastic channels to bridge</strong><br>
+                        In the <em>Channels</em> tab, enable the channels you want forwarded to iMessage. For the Okie Mesh community channel (<strong>OkieCorral</strong>) enable its slot. You can bridge multiple channels simultaneously.
+                    </li>
+                    <li>
+                        <strong>Save and apply</strong><br>
+                        Click <strong>Save</strong>. Hermes will restart its connection and begin relaying messages.
+                    </li>
+                </ol>
+            </section>
+
+            <!-- ── Pair your iPhone ────────────────────────────────── -->
+            <section id="pair-your-phone">
+                <h2>Pair your iPhone</h2>
+                <p>There is no separate app to install on your iPhone. Everything goes through the built-in Messages app:</p>
+                <ol>
+                    <li>
+                        <strong>Make sure iMessage is enabled on your iPhone</strong><br>
+                        Go to <em>Settings → Apps → Messages</em> and confirm <strong>iMessage</strong> is toggled on.
+                    </li>
+                    <li>
+                        <strong>Add a contact for your Hermes relay</strong><br>
+                        In Contacts (or directly in Messages), add the Apple ID / phone number you configured in Hermes as a new contact — for example, name it "Okie Mesh Gateway".
+                    </li>
+                    <li>
+                        <strong>Start a new iMessage conversation</strong><br>
+                        Open Messages, tap the compose button, and send a message to your Hermes relay address. Hermes will forward it to the Meshtastic channel you have mapped for that contact.
+                    </li>
+                    <li>
+                        <strong>Receive mesh replies</strong><br>
+                        When someone on the mesh replies, Hermes will send you an iMessage and it will appear in the same thread — just like a normal text conversation.
+                    </li>
+                </ol>
+            </section>
+
+            <!-- ── Using Hermes ────────────────────────────────────── -->
+            <section id="using-hermes">
+                <h2>Using Hermes day-to-day</h2>
+                <h3>Sending a message to the mesh</h3>
+                <p>Open the "Okie Mesh Gateway" conversation in Messages and type your message. Hermes picks it up and broadcasts it over the radio on the mapped Meshtastic channel. There is typically a short delay (a few seconds) while the radio transmits.</p>
+
+                <h3>Receiving mesh messages</h3>
+                <p>Incoming Meshtastic messages appear as iMessages in the gateway conversation thread. The sender's Meshtastic node name is prepended to each message so you can tell who is talking.</p>
+
+                <h3>Direct messages</h3>
+                <p>If your radio's Hermes instance receives a Meshtastic DM addressed to its node, Hermes can optionally forward it as an iMessage to a specific contact you have configured. Enable this under <em>Settings → Direct Messages</em>.</p>
+
+                <h3>Keep Hermes running</h3>
+                <p>Hermes must stay open on the Mac for the bridge to work. Enable <em>Start at Login</em> in Hermes settings so it launches automatically after a reboot. You may also want to set your Mac's energy settings to <em>Prevent automatic sleeping when the display is off</em> under <em>System Settings → Energy</em>.</p>
+            </section>
+
+            <!-- ── Tips & Troubleshooting ──────────────────────────── -->
+            <section id="tips">
+                <h2>Tips &amp; Troubleshooting</h2>
+
+                <h3>Hermes shows "Radio not connected"</h3>
+                <ul>
+                    <li>Try unplugging and re-plugging the USB cable.</li>
+                    <li>Make sure no other app (Meshtastic desktop, PlatformIO serial monitor, etc.) has the serial port open at the same time.</li>
+                    <li>If using Bluetooth, unpair the radio on the Mac and re-pair it.</li>
+                </ul>
+
+                <h3>Messages arrive on the Mac but not on my iPhone</h3>
+                <ul>
+                    <li>Confirm both devices are signed into the same Apple ID, <em>or</em> that the relay Apple ID is added as a known sender in the iPhone Messages settings.</li>
+                    <li>Check <em>Settings → Messages → Send &amp; Receive</em> on your iPhone — the relay address should be listed as a reachable address or it should appear under your Apple ID.</li>
+                </ul>
+
+                <h3>There is a long delay before messages appear</h3>
+                <ul>
+                    <li>LoRa is inherently slow. At the default "LongFast" spread factor, a short message takes roughly 0.5–2 seconds to transmit; add network hop delays on top of that.</li>
+                    <li>If the Mac is on a slow or intermittent internet connection, iMessage delivery can be delayed independently of the radio.</li>
+                </ul>
+
+                <h3>My messages are not reaching the OkieCorral channel</h3>
+                <ul>
+                    <li>Double-check that the OkieCorral channel is added to your radio. Scan the QR code on the <a href="/join/#network">Join page</a> or click <a href="https://meshtastic.org/e/?add=true#Cg0SAQEaCExvbmdGYXN0ChQSAQUaCk9raWVjb3JyYWwlAQAAABIMCAE4AUADSAFQHmgB">here</a> to add it.</li>
+                    <li>Verify that Hermes has that channel's slot mapped in <em>Settings → Channels</em>.</li>
+                </ul>
+
+                <h3>Where to get help</h3>
+                <p>Join the <a href="https://discord.com/channels/867578229534359593/1207391763715723354" target="_blank" rel="noopener">Okie Mesh Discord</a> and ask in the #hermes channel, or open an issue on the <a href="https://github.com/meshtastic/Hermes/issues" target="_blank" rel="noopener">Hermes GitHub repo</a>.</p>
+            </section>
+        </main>
+    </body>
+    <div class="footer-spacing"></div>
+    <div class="footer">
+        <footer>
+            <p>This website is a fork of <a href="https://austinmesh.org/">AustinMesh.Org</a> which is <a href="https://creativecommons.org/licenses/by-sa/4.0/legalcode.en/" target="_blank">(C)</a> by Tommy Ekstrand.</p>
+        </footer>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.querySelector("header").classList.add("loaded");
+        });
+    </script>
+</html>
