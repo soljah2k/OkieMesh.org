@@ -1,0 +1,13 @@
+{
+  "name": "okiemesh-org",
+  "version": "1.0.0",
+  "description": "OkieMesh.org static website for the Oklahoma Meshtastic mesh network community",
+  "private": true,
+  "scripts": {
+    "lint": "htmlhint '**/*.html' --ignore 'node_modules/**'",
+    "serve": "npx http-server . -p 8080"
+  },
+  "devDependencies": {
+    "htmlhint": "^1.1.4"
+  }
+}
