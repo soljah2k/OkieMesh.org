@@ -26,4 +26,5 @@ Temporary Items
 .apdisk
 
 # Admin Page for editing nodes
-/node_map/admin.htmlnode_modules/
+/node_map/admin.html
+node_modules/
